@@ -1,0 +1,41 @@
+40 40
+Input            data             0 1 data 3 84 84
+Convolution      conv1            1 1 data conv1 16 3 1 1 1 0 432
+BatchNorm        bn_conv1         1 1 conv1 conv1_bn_conv1 16
+Scale            scale_conv1      1 1 conv1_bn_conv1 conv1_scale_conv1 16 1
+ReLU             conv1_relu       1 1 conv1_scale_conv1 conv1_conv1_relu 0.000000
+Pooling          pool1            1 1 conv1_conv1_relu pool1 0 3 2 0 0
+Convolution      conv2            1 1 pool1 conv2 32 3 1 1 1 0 4608
+BatchNorm        bn_conv2         1 1 conv2 conv2_bn_conv2 32
+Scale            scale_conv2      1 1 conv2_bn_conv2 conv2_scale_conv2 32 1
+ReLU             conv2_relu       1 1 conv2_scale_conv2 conv2_conv2_relu 0.000000
+Pooling          pool2            1 1 conv2_conv2_relu pool2 0 3 2 0 0
+Convolution      conv3            1 1 pool2 conv3 64 3 1 1 1 0 18432
+BatchNorm        bn_conv3         1 1 conv3 conv3_bn_conv3 64
+Scale            scale_conv3      1 1 conv3_bn_conv3 conv3_scale_conv3 64 1
+ReLU             conv3_relu       1 1 conv3_scale_conv3 conv3_conv3_relu 0.000000
+Pooling          pool3            1 1 conv3_conv3_relu pool3 0 3 2 0 0
+Convolution      conv4            1 1 pool3 conv4 128 3 1 1 1 0 73728
+BatchNorm        bn_conv4         1 1 conv4 conv4_bn_conv4 128
+Scale            scale_conv4      1 1 conv4_bn_conv4 conv4_scale_conv4 128 1
+ReLU             conv4_relu       1 1 conv4_scale_conv4 conv4_conv4_relu 0.000000
+Pooling          pool4            1 1 conv4_conv4_relu pool4 0 3 2 0 0
+Convolution      conv5            1 1 pool4 conv5 256 3 1 1 1 0 294912
+BatchNorm        bn_conv5         1 1 conv5 conv5_bn_conv5 256
+Scale            scale_conv5      1 1 conv5_bn_conv5 conv5_scale_conv5 256 1
+ReLU             conv5_relu       1 1 conv5_scale_conv5 conv5_conv5_relu 0.000000
+Convolution      conv6            1 1 conv5_conv5_relu conv6 256 3 1 1 1 0 589824
+BatchNorm        bn_conv6         1 1 conv6 conv6_bn_conv6 256
+Scale            scale_conv6      1 1 conv6_bn_conv6 conv6_scale_conv6 256 1
+ReLU             conv6_relu       1 1 conv6_scale_conv6 conv6_conv6_relu 0.000000
+Pooling          pool6            1 1 conv6_conv6_relu pool6 0 2 2 0 0
+Convolution      conv7            1 1 pool6 conv7 512 3 1 1 1 0 1179648
+BatchNorm        bn_conv7         1 1 conv7 conv7_bn_conv7 512
+Scale            scale_conv7      1 1 conv7_bn_conv7 conv7_scale_conv7 512 1
+ReLU             conv7_relu       1 1 conv7_scale_conv7 conv7_conv7_relu 0.000000
+Pooling          pool7            1 1 conv7_conv7_relu pool7 0 3 2 0 0
+Convolution      conv8            1 1 pool7 conv8 433 1 1 1 1 0 221696
+BatchNorm        bn_conv8         1 1 conv8 conv8_bn_conv8 433
+Scale            scale_conv8      1 1 conv8_bn_conv8 conv8_scale_conv8 433 1
+ReLU             conv8_relu       1 1 conv8_scale_conv8 conv8_conv8_relu 0.000000
+Pooling          global_avg_pool  1 1 conv8_conv8_relu global_avg_pool 1 0 1 0 1
